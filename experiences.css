@@ -1,0 +1,383 @@
+.container {
+    width: 100%;
+    padding: 60px 30px 0px;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.header_portfolio{
+    text-align: center;
+    font-family: "inter";
+    font-weight: bold;
+    font-size: 40px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  .gradient-text {
+    background: linear-gradient(to right, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 70px;
+    font-weight: bold;
+  }
+  
+  .hero h2 {
+    color: #3b82f6;
+    font-size: 48px;
+    line-height: 52px;
+  }
+  
+  .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+  
+  .social-icons a {
+    color: #3b82f6;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .social-icons a:hover {
+    color: #a855f7;          /* Purple-ish hover effect */
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+  }
+  
+  
+  .tagline {
+    padding-top: 20px;
+    color: #4b5563;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.logo-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.logo-slider {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 30px;        /* Add horizontal padding */
+  overflow: hidden;
+  position: relative; 
+}
+.logo-slider::before {
+  position: absolute;
+  content: '';
+  background-image: url(https://growthnatives.com/wp-content/uploads/2024/12/gradient-overlay-white.png);
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  left: 0;
+  z-index: 1;
+}
+
+.logo-slider .main-carousel::after {
+  content: "";
+  position: absolute;
+  background-image: url(https://growthnatives.com/wp-content/uploads/2024/12/gradient-overlay-white.png);
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  transform: rotate(180deg);
+  right: 164px;
+  left: 29%;
+  top: 0px;
+}
+.main-carousel {
+  --total-marquee-items: 11;
+  height: 100px;
+  width: calc(250px * (var(--total-marquee-items)));
+  box-sizing: border-box;
+  position: relative;
+  padding: 30px 0;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 10s linear infinite;
+  align-items: center;
+}
+
+.logo {
+  width: 75px;
+  height: 80px;
+  flex: 0 0 auto;
+  margin: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+  margin: 0 30px;
+  object-fit: contain;
+}
+ 
+.logo img:hover {
+  transform: scale(1.2);
+} 
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.button {
+  padding-top: 80px;
+}
+
+.cta-container {
+  text-align: center;
+  padding: 20px 30px 20px;
+}
+
+.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a73e8;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button .icon {
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #6a0dad;
+}
+
+.cta-button:hover .text {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.cta-button .text {
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-me {
+  max-width: 1440px;
+  font-family: Arial, sans-serif;
+  color: #444;
+  padding: 10px 50px;
+}
+
+.about-me h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+}
+
+.about-me p {
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #3366ff;
+}
+
+.skills-section {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.skills-title {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 25px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.skill-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 30px 20px;
+  width: 220px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.skill-card i {
+  font-size: 28px;
+  color: #3b82f6; /* Tailwind blue-500 */
+  margin-bottom: 15px;
+}
+
+.skill-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.skill-card:hover,.skill-card:active
+ {
+  border-color: #3b82f6;
+  transform: translateY(-5px);
+}
+
+.experience-section {
+  padding: 60px 20px;
+  background: #f8f9fb;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(to right, #3b82f6, #a855f7);
+}
+
+.timeline-item {
+  padding: 20px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.timeline-item.left {
+  left: 0;
+
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.card .date {
+  color: #276ef1;
+  font-weight: bold;
+  text-align: right;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-align: right;
+  
+}
+
+.card p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.card:hover .details {
+  max-height: 500px;
+  text-align: left;
+}
+
+
+.hover-hint {
+  text-align: right;
+  font-style: italic;
+  font-size: 13px;
+  color: #999;
+  margin-top: 10px;
+}
