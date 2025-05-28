@@ -123,6 +123,7 @@ body {
   .gradient-text {
     background: linear-gradient(to right, #3b82f6, #a855f7);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 70px;
     font-weight: bold;
@@ -441,17 +442,12 @@ body {
   transition: 0.3s ease;
 }
 
-.card .date {
-  color: #276ef1;
-  font-weight: bold;
-  text-align: right;
-}
 
 .card h3 {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px;
-  text-align: right;
+  text-align: center;
   
 }
 
@@ -459,7 +455,7 @@ body {
   color: #555;
   font-size: 15px;
   margin-bottom: 10px;
-  text-align: right;
+  text-align: center;
 }
 
 .details {
@@ -796,3 +792,561 @@ body.dark-mode .badge-deprecated {
   height: 100%; /* Ensure the link spans the entire card */
 }
 
+
+.timeline-section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #3b82f6;
+  transform: translateX(-50%);
+}
+
+/* Timeline items */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item.left .content {
+  margin-right: auto;
+  transform: translateX(-20%);
+}
+
+.timeline-item.right .content {
+  margin-left: auto;
+  transform: translateX(20%);
+}
+
+.content {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.location {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.score {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  color: #3b82f6;
+}
+
+.border-blue {
+  border-top: 4px solid #3b82f6;
+}
+.border-purple {
+  border-top: 4px solid #8b5cf6;
+}
+.border-green {
+  border-top: 4px solid #10b981;
+}
+
+.green {
+  color: #10b981;
+}
+
+.dot {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  position: absolute;
+  top: 0.5rem;
+  background: white;
+  border: 4px solid;
+  z-index: 10;
+}
+
+.dot.blue {
+  border-color: #3b82f6;
+}
+
+.dot.purple {
+  border-color: #8b5cf6;
+}
+
+.dot.green {
+  border-color: #10b981;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 8%;
+  }
+
+  .timeline-item.left .content,
+  .timeline-item.right .content {
+    margin: 0;
+    transform: translateX(0);
+  }
+
+  .timeline-item {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 2.5rem;
+  }
+
+  .dot {
+    left: 0;
+    top: 1.5rem;
+  }
+}
+
+/* Section */
+.expertise-section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .icon {
+  width: 28px;
+  height: 28px;
+  color: #3b82f6;
+  margin-bottom: 0.75rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Responsive text alignment */
+@media (max-width: 768px) {
+  .card {
+    text-align: center;
+  }
+}
+/* Icon styles */
+.card .icon {
+  transition: transform 0.6s ease;
+  display: inline-block;
+}
+
+/* On card hover, rotate the icon */
+.card:hover .icon {
+  transform: rotate(360deg);
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Section Styling */
+.hobbies-section {
+  background-color: #f9fafb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hobbies-section h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+/* Card Layout */
+.hobby-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Card */
+.hobby-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Icon Styling */
+.icon-wrapper {
+  background: #f5f3ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #7c3aed;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.6s ease;
+}
+
+.hobby-card:hover .icon {
+  transform: rotate(360deg);
+}
+
+/* Title & Text */
+.hobby-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.hobby-card p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .hobby-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.linkedin-section {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.linkedin-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.linkedin-section .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.card-container {
+  position: relative;
+  max-width: 100%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.profile-card {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border: 2px solid #0A66C2;
+  color: #0A66C2;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-btn:hover {
+  background-color: #0A66C2;
+  color: #ffffff;
+}
+
+.view-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.card-container:hover .overlay {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .linkedin-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .view-btn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}
+
+
+
+/* Section */
+.cert-section {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.cert-section h2 {
+  font-size: 2rem;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.cert-section .subtitle {
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* Grid Container */
+.card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0 10px;
+}
+
+/* Individual Card */
+.cert-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Scrollable Image Container */
+.cert-img {
+  height: 180px;
+  overflow-y: auto;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cert-img img {
+  width: 100%;
+  display: block;
+}
+
+/* Custom Scrollbar */
+.cert-img::-webkit-scrollbar {
+  width: 6px;
+}
+.cert-img::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+/* Card Body */
+.cert-body {
+  padding: 16px;
+}
+
+.cert-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cert-body p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* Actions */
+.cert-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* View Button */
+.btn.view {
+  background-color: #2563eb;
+  color: white;
+}
+.btn.view:hover {
+  background-color: #1d4ed8;
+}
+
+/* Download Button */
+.btn.download {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+.btn.download:hover {
+  background-color: #e5e7eb;
+}
+
+/* Responsive Padding */
+@media (max-width: 480px) {
+  .cert-section {
+    padding: 0 10px;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+.social-icons {
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 28px;
+      color: #333;
+      transition: transform 0.6s ease;
+    }
+
+    .social-icons a:hover {
+      transform: rotate(360deg);
+    }
+
+    .footer-text {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: #888;
+    }
+
+    .footer {
+      padding: 20px;
+    }
