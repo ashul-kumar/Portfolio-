@@ -448,6 +448,8 @@ body {
   font-weight: bold;
   margin: 10px 0 5px;
   text-align: center;
+  color: #e0005f;
+
   
 }
 
@@ -467,6 +469,7 @@ body {
 .card:hover .details {
   max-height: 500px;
   text-align: left;
+  color: #272727;
 }
 
 
@@ -858,8 +861,10 @@ body.dark-mode .badge-deprecated {
 }
 
 .date {
-  font-size: 0.9rem;
-  color: #6b7280;
+  font-size: 18px;
+  color: #2563eb;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 .location {
@@ -986,9 +991,10 @@ body.dark-mode .badge-deprecated {
 }
 
 .card p {
-  font-size: 0.95rem;
+  font-size: 18px;
   color: #4b5563;
-  line-height: 1.5;
+  line-height: 28px;
+  font-weight: 500;
 }
 
 /* Responsive text alignment */
